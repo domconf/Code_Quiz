@@ -11,15 +11,25 @@
 
 <body>
     <script src="script.js"></script>
-    <div id="quiz"></div>
-    <p>Welcome to the College Basketball Code Quiz! You will have 60 seconds to answer as many questions as possible.
-        For each incorrect answer, you will lose 10 seconds from the remaining time. Good luck!</p>
-    <button id="start-btn">Start Quiz</button>
+    <div class="container"></div>
+    <div id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
 
-    <div id="quiz-container">
-        <div id="question"></div>
-        <div id="choices"></div>
-        <div id="timer"></div>
+
+        </div>
+        <div class="controls"></div>
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+
+        <!-- <div id="quiz-container">
+            <div id="question"></div>
+            <div id="choices"></div>
+            <div id="timer"></div> -->
 
     </div>
 </body>

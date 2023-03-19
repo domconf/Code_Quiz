@@ -8,7 +8,6 @@ const submitButton = document.getElementById("submit-btn");
 let currentQuestion = 0;
 let timeLeft = 60;
 
-startButton.addEventListener('click', showResults);
 
 const questions = [
     {
@@ -61,5 +60,10 @@ const questions = [
         choices: ["8 seed", "6 seed", "10 seed", "12 seed"],
         correctAnswer: "8 seed",
     }
+];
 
-]
+startButton.addEventListener('click', startQuiz);
+
+function startQuiz() {
+    startButton
+}
