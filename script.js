@@ -1,7 +1,12 @@
-const quizContainer = document.getElementById('quiz');
-const startButton = document.getElementById('submit');
-const timer = document.getElementById('timer');
-let secondsLeft = 60;
+const quizContainer = document.getElementById("quiz-container");
+const questionContainer = document.getElementById("question");
+const choicesContainer = document.getElementById("choices");
+const startButton = document.getElementById("start-btn");
+const timer = document.getElementById("timer");
+const timeLeftContainer = document.getElementById("time-left");
+const submitButton = document.getElementById("submit-btn");
+let currentQuestion = 0;
+let timeLeft = 60;
 
 startButton.addEventListener('click', showResults);
 
