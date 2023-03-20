@@ -8,7 +8,6 @@ const submitButton = document.getElementById("submit-btn");
 let currentQuestion = 0;
 let timeLeft = 60;
 
-
 const questions = [
     {
         question: "What is the term used to describe the NCAAB tournament?",
@@ -61,6 +60,7 @@ const questions = [
         correctAnswer: "8 seed",
     }
 ];
+
 
 startButton.addEventListener('click', startQuiz);
 
