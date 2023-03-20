@@ -43,6 +43,7 @@ let correct = 0;
 //Store Answer
 let UserAns = undefined;
 
+
 start.addEventListener("click", () => {
     start.style.display = "none";
     info.style.display = "block";
@@ -53,23 +54,27 @@ exit.addEventListener("click", () => {
     info.style.display = "none";
 });
 
-let countDown = () => {
+continueBtn.addEventListener("click", startTimer);
+
+function startTimer() {
+    let seconds = 60;
+
+    const countdown = setInterval(function () {
+        console.log(seconds);
+        seconds--;
+
+        if (seconds < 0) {
+            clearInterval(countdown);
+            console.log("Time has ended!");
+        }
+    }, 1000);
 }
 
+let loadData = () => {
+    questionNo.innerHTML = index + 1 + ". ";
+    questionText.innerHTML = questions[index]
 
-
-
-
-
-// const quizContainer = document.getElementById("quiz-container");
-// const questionContainer = document.getElementById("question");
-// const choicesContainer = document.getElementById("choices");
-// const startButton = document.getElementById("start-btn");
-// const timer = document.getElementById("timer");
-// const timeLeftContainer = document.getElementById("time-left");
-// const submitButton = document.getElementById("submit-btn");
-// let currentQuestion = 0;
-// let timeLeft = 60;
+}
 
 // const questions = [
 //     {
@@ -123,10 +128,3 @@ let countDown = () => {
 //         correctAnswer: "8 seed",
 //     }
 // ];
-
-
-// startButton.addEventListener('click', startQuiz);
-
-// function startQuiz() {
-//     startButton
-// }
