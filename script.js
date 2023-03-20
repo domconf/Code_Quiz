@@ -7,6 +7,29 @@ let exit = document.querySelector("#exit");
 let continueBtn = document.querySelector("#continue");
 
 // Quiz Section
+let quiz = document.querySelector("#quiz");
+let time = document.querySelector("#time");
+
+//Question Section
+let questionNo = document.querySelector("#questionNo");
+let questionText = document.querySelector("#questionText");
+
+// Question Options
+let option1 = document.querySelector("#option1");
+let option2 = document.querySelector("#option2");
+let option3 = document.querySelector("#option3");
+let option4 = document.querySelector("#option4");
+
+
+
+
+
+
+
+
+
+
+
 
 // const quizContainer = document.getElementById("quiz-container");
 // const questionContainer = document.getElementById("question");
