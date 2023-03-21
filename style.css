@@ -101,7 +101,7 @@ body {
     height: 60px;
     width: 100%;
     background: #fafafc;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     display: flex;
@@ -126,7 +126,7 @@ body {
     border-radius: 20px 5px;
     display: flex;
     flex-direction: row;
-    position: absolute;
+    position: relative;
     right: 10px;
 }
 
@@ -149,14 +149,14 @@ body {
 }
 
 #quiz #question {
-    position: absolute;
+    position: relative;
     top: 90px;
     display: flex;
     flex-direction: row;
 }
 
 #quiz #question h2 {
-    font-size: 27px;
+    font-size: 20px;
 }
 
 #quiz #question h2:first-child {
@@ -166,7 +166,7 @@ body {
 #quiz #optionList {
     height: 400px;
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 160px;
 }
 
@@ -201,7 +201,7 @@ body {
     height: 60px;
     width: 100%;
     background: #fafafc;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     display: flex;
@@ -221,7 +221,7 @@ body {
     display: grid;
     place-items: center;
     background: #84e91e;
-    position: absolute;
+    position: relative;
     right: 0;
     color: #e7f1fa;
     border: 2px solid #b0c4d8;
@@ -254,7 +254,7 @@ body {
 #container #result i {
     font-size: 180px;
     color: #84e91e;
-    position: absolute;
+    position: relative;
     top: 30px;
     left: 120px;
 }
@@ -263,7 +263,7 @@ body {
     height: 40px;
     width: 87%;
     font-size: 25px;
-    position: absolute;
+    position: relative;
     text-align: center;
     top: 75px;
 }
@@ -280,7 +280,7 @@ body {
     outline: none;
     background: #84e91e;
     color: #e7f1fa;
-    position: absolute;
+    position: relative;
     left: 90px;
     top: 350px;
     border: 2px solid lightgray;
@@ -295,4 +295,39 @@ body {
 
 #container #result button:hover {
     background: #104d10;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 2px solid #ddd;
+}
+
+th {
+    background-color: gray;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #84e91e;
+}
+
+#leaderboard {
+    background-color: black;
+}
+
+#leaderboard h2 {
+    color: #84e91e;
+    text-align: center;
+    text-decoration: underline #84e91e;
 }
