@@ -1,4 +1,4 @@
-let questions = [
+questions = [
     {
         question: "What is the term used to describe the NCAAB tournament?",
         choices: ["April Angerness", "March Madness", "May Madness", "June Joyous"],
