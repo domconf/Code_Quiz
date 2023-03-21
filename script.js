@@ -25,7 +25,7 @@ let total_correct = document.querySelector("#total_correct");
 let next_question = document.querySelector("#next_question");
 
 // Result Section
-let result = document.querySelector("#result")
+let result = document.querySelector("#result");
 let points = document.querySelector("#points");
 let quit = document.querySelector("quit");
 let startAgain = document.querySelector("#startAgain");
@@ -34,7 +34,7 @@ let startAgain = document.querySelector("#startAgain");
 let choice_que = document.querySelector(".choice_que");
 
 let index = 0;
-let timer = 0;
+// let timer = 0;
 let interval = 0;
 
 // Total Points
@@ -42,6 +42,10 @@ let correct = 0;
 
 //Store Answer
 let UserAns = undefined;
+
+// Timer
+const timer = document.querySelector("#time");
+
 
 
 start.addEventListener("click", () => {
@@ -57,25 +61,56 @@ exit.addEventListener("click", () => {
 continueBtn.addEventListener("click", startTimer);
 
 function startTimer() {
-    let seconds = 60;
+    let timeLeft = 60;
 
     const countdown = setInterval(function () {
-        console.log(seconds);
-        seconds--;
+        // console.log(timeLeft);
+        // timeLeft--;
 
-        if (seconds < 0) {
+        if (timeLeft <= 0) {
             clearInterval(countdown);
-            console.log("Time has ended!");
+            timer.innerHTML = "0";
+            alert("Time is up!");
+        } else {
+            timer.innerHTML = timeLeft;
         }
+        timeLeft -= 1
+
     }, 1000);
 }
 
-let loadData = () => {
-    questionNo.innerHTML = index + 1 + ". ";
-    questionText.innerHTML = questions[index]
+// let loadData = () => {
+//     questionNo.innerHTML = index + 1 + ". ";
+//     questionText.innerHTML = questions[index].question;
+//     option1.innerHTML = questions[index].choices1;
+//     option2.innerHTML = questions[index].choices2;
+//     option3.innerHTML = questions[index].choices3;
+//     option4.innerHTML = questions[index].choices4;
+// }
 
-}
+// continueBtn.addEventListener("click", () => {
+//     quiz.style.display = "block";
+//     info.style.display = "none";
+// })
 
+// choice_que.forEach((choices, choiceNo) => {
+//     choices.addEventListener("click", () => {
+//         choices.classList.add("active");
+
+//         if (choiceNo === questions[index].answer) {
+//             correct++;
+//         }
+//         else {
+//             correct += 0;
+//         }
+
+//         for (i = 0; i <= 3; i++) {
+//             choice_que[i].classList.add("disabled");
+//         }
+
+//     })
+
+// });
 // const questions = [
 //     {
 //         question: "What is the term used to describe the NCAAB tournament?",
