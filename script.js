@@ -133,10 +133,13 @@ exit.addEventListener("click", () => {
     info.style.display = "none";
 });
 
-continueBtn.addEventListener("click", startTimer);
+continueBtn.addEventListener("click", () => {
+    startTimer()
+    info.style.display = "none";
+});
 
+let timeLeft = 60;
 function startTimer() {
-    let timeLeft = 60;
 
     const countdown = setInterval(function () {
         // console.log(timeLeft);
@@ -146,6 +149,9 @@ function startTimer() {
             clearInterval(countdown);
             timer.innerHTML = "0";
             alert("Time is up!");
+
+            showResult()
+
         } else {
             timer.innerHTML = timeLeft;
         }
@@ -158,6 +164,7 @@ let allQuestions = document.querySelector("#question");
 let quiz = document.querySelector("#quiz");
 let time = document.querySelector("#time");
 let answersSection = document.querySelector("#answersSection");
+let submitBtn = document.querySelector("#submit-btn");
 
 
 let currentQuestion = 0;
@@ -182,6 +189,8 @@ function checkAnswer() {
 
     if (userChoice === questions[currentQuestion].correctAnswer) {
         score += 10
+    } else {
+        timeLeft -= 10
     }
     currentQuestion++
     if (currentQuestion === questions.length) {
@@ -192,5 +201,19 @@ function checkAnswer() {
 
 }
 
+function showResult() {
+    quiz.innerHTML = `<h2> User Score: ${score} out of 100 </h2>
+    `
+}
 
 loadQuestions()
+resetBtn = document.querySelector("#resetBtn")
+
+console.log("resetBtn-->", resetBtn)
+
+
+submitBtn.addEventListener("click", checkAnswer)
+function restartQuiz() {
+    window.location.reload()
+}
+resetBtn.addEventListener("click", restartQuiz)
