@@ -60,13 +60,13 @@ let exit = document.querySelector("#exit");
 let continueBtn = document.querySelector("#continue");
 
 // Quiz Section
-let quiz = document.querySelector("#quiz");
-let time = document.querySelector("#time");
+// let quiz = document.querySelector("#quiz");
+// let time = document.querySelector("#time");
 
 //Question Section
 let questionNo = document.querySelector("#questionNo");
 let questionText = document.querySelector("#questionText");
-let allQuestions = document.querySelector("#question");
+// let allQuestions = document.querySelector("#question");
 
 // Question Options
 let option1 = document.querySelector("#option1");
@@ -107,8 +107,10 @@ let scores = document.querySelector("#scores");
 
 
 for (let i = 0; i < questions.length; i++) {
-    console.log(questions[i].question)
-    questionText.innerHTML = questions[i].question;
+    // console.log(questions[i].question)
+    let singleQuestion = questions[i].question
+    // console.log(singleQuestion)
+    // questionText.innerHTML = questions[i].question;
 }
 
 // for (let i = 0; i < questions.length; i++) {
@@ -152,36 +154,43 @@ function startTimer() {
     }, 1000);
 }
 
-// let loadData = () => {
-//     questionNo.innerHTML = index + 1 + ". ";
-//     questionText.innerHTML = questions[index].question;
-//     option1.innerHTML = questions[index].choice[0];
-//     option2.innerHTML = questions[index].choices2;
-//     option3.innerHTML = questions[index].choices3;
-//     option4.innerHTML = questions[index].choices4;
-// }
+let allQuestions = document.querySelector("#question");
+let quiz = document.querySelector("#quiz");
+let time = document.querySelector("#time");
+let answersSection = document.querySelector("#answersSection");
 
-// continueBtn.addEventListener("click", () => {
-//     quiz.style.display = "block";
-//     info.style.display = "none";
-// })
 
-// choice_que.forEach((choices, choiceNo) => {
-//     choices.addEventListener("click", () => {
-//         choices.classList.add("active");
+let currentQuestion = 0;
+let score = 0;
 
-//         if (choiceNo === questions[index].answer) {
-//             correct++;
-//         }
-//         else {
-//             correct += 0;
-//         }
+function loadQuestions() {
+    const question = questions[currentQuestion]
+    console.log(question)
+    allQuestions.textContent = (currentQuestion + 1) + ". " + question.question
+    answersSection.innerHTML = ""
 
-//         for (i = 0; i <= 3; i++) {
-//             choice_que[i].classList.add("disabled");
-//         }
+    for (i = 0; i < question.choices.length; i++) {
+        const currentChoice = question.choices[i];
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="radio" name="choice" value="${currentChoice}">` + currentChoice;
+        answersSection.appendChild(label);
+    }
+}
 
-//     })
+function checkAnswer() {
+    const userChoice = document.querySelector('input[name="choice"]:checked').value;
 
-// });
+    if (userChoice === questions[currentQuestion].correctAnswer) {
+        score += 10
+    }
+    currentQuestion++
+    if (currentQuestion === questions.length) {
+        showResult()
+    } else {
+        loadQuestions()
+    }
 
+}
+
+
+loadQuestions()

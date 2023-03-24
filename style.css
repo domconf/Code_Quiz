@@ -94,14 +94,14 @@ body {
 #quiz {
     /* display: block; */
     height: 480px;
-    position: relative;
+    position: absolute;
 }
 
 #quiz #quiz-header {
     height: 60px;
     width: 100%;
     background: #fafafc;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     display: flex;
@@ -111,7 +111,7 @@ body {
 }
 
 #quiz #quiz-header h5 {
-    font-size: 24px;
+    font-size: 22px;
     margin: 0 20px;
     color: #84e91e;
 }
@@ -126,7 +126,7 @@ body {
     border-radius: 20px 5px;
     display: flex;
     flex-direction: row;
-    position: relative;
+    position: absolute;
     right: 10px;
 }
 
@@ -149,7 +149,7 @@ body {
 }
 
 #quiz #question {
-    position: relative;
+    position: absolute;
     top: 90px;
     display: flex;
     flex-direction: row;
@@ -166,7 +166,7 @@ body {
 #quiz #optionList {
     height: 400px;
     width: 100%;
-    position: relative;
+    position: absolute;
     top: 160px;
 }
 
@@ -201,7 +201,7 @@ body {
     height: 60px;
     width: 100%;
     background: #fafafc;
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     display: flex;
@@ -221,7 +221,7 @@ body {
     display: grid;
     place-items: center;
     background: #84e91e;
-    position: relative;
+    position: absolute;
     right: 0;
     color: #e7f1fa;
     border: 2px solid #b0c4d8;
@@ -247,14 +247,14 @@ body {
     border-radius: 30px 10px;
     border: 2px solid black;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     display: none;
 }
 
 #container #result i {
     font-size: 180px;
     color: #84e91e;
-    position: relative;
+    position: absolute;
     top: 30px;
     left: 120px;
 }
@@ -263,7 +263,7 @@ body {
     height: 40px;
     width: 87%;
     font-size: 25px;
-    position: relative;
+    position: absolute;
     text-align: center;
     top: 75px;
 }
@@ -280,7 +280,7 @@ body {
     outline: none;
     background: #84e91e;
     color: #e7f1fa;
-    position: relative;
+    position: absolute;
     left: 90px;
     top: 350px;
     border: 2px solid lightgray;
@@ -300,6 +300,7 @@ body {
 table {
     border-collapse: collapse;
     width: 100%;
+    position: absolute;
 }
 
 th,
@@ -330,4 +331,15 @@ tr:nth-child(odd) {
     color: #84e91e;
     text-align: center;
     text-decoration: underline #84e91e;
+}
+
+#submit-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
 }
