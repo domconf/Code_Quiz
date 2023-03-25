@@ -26,8 +26,7 @@ Below are several snapshots of the quizes usage.
 
 <img width="1470" alt="Screenshot 2023-03-25 at 2 53 14 PM" src="https://user-images.githubusercontent.com/123976458/227736658-6bbc0969-11f7-4df9-b56e-c96045be7c77.png">
 
-
-
+![Screenshot 2023-03-25 at 2 55 07 PM (2)](https://user-images.githubusercontent.com/123976458/227736763-f304aee3-c9f0-4198-92f8-18c60a52456f.png)
 
 ## Author
 Dominick Confessore
