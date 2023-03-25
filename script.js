@@ -55,12 +55,6 @@ let start = document.querySelector("#start");
 let info = document.querySelector("#info");
 let exit = document.querySelector("#exit");
 let continueBtn = document.querySelector("#continue");
-
-// Quiz Section
-// let quiz = document.querySelector("#quiz");
-// let time = document.querySelector("#time");
-
-//Question Section
 let questionNo = document.querySelector("#questionNo");
 let questionText = document.querySelector("#questionText");
 // let allQuestions = document.querySelector("#question");
