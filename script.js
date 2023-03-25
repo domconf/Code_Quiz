@@ -98,30 +98,45 @@ let correct = 0;
 //Store Answer
 let UserAns = undefined;
 
+// let input = document.querySelector("#myInput").value;
+// console.log("input--->", input)
+// let output = document.querySelector("#ouput");
+// input.addEventListener("input", function () {
+//     output.textContent = input.value
+// })
+let tableName = document.querySelector(".tableName");
+let tableScore = document.querySelector(".tableScore")
+let tableRank = document.querySelector(".tableRank")
+const form = document.getElementById("myForm");
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const nameInput = document.getElementById("name");
+
+    const name = nameInput.value;
+
+    const output = document.getElementById("output");
+    tableName.textContent = name;
+
+    console.log("score--->", score)
+    tableScore.innerHTML = score;
+
+
+});
 // Timer
 const timer = document.querySelector("#time");
 
 // Leaderboard
 let leaderboard = document.querySelector("#leaderboard");
 let scores = document.querySelector("#scores");
+let logInitials = document.querySelector("#logInitials")
 
 
 for (let i = 0; i < questions.length; i++) {
-    // console.log(questions[i].question)
     let singleQuestion = questions[i].question
-    // console.log(singleQuestion)
-    // questionText.innerHTML = questions[i].question;
 }
 
-// for (let i = 0; i < questions.length; i++) {
-// console.log(questions[i].question)
-//     for (let i = 0; i <= questions[i].choices.length; i++) {
-//         choice_que.innerHTML = questions[i].choices;
-//     }
-// }
-// function displayQuestions () {
-
-// }
 
 let btnContainer = document.querySelector("button-container");
 
@@ -153,7 +168,6 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(countdown);
             timer.innerHTML = "0";
-            // alert("Time is up!");
 
             showResult()
 
@@ -177,7 +191,6 @@ let score = 0;
 
 function loadQuestions() {
     const question = questions[currentQuestion]
-    console.log(question)
     allQuestions.textContent = (currentQuestion + 1) + ". " + question.question
     answersSection.innerHTML = ""
 
