@@ -57,48 +57,40 @@ let exit = document.querySelector("#exit");
 let continueBtn = document.querySelector("#continue");
 let questionNo = document.querySelector("#questionNo");
 let questionText = document.querySelector("#questionText");
-// let allQuestions = document.querySelector("#question");
-
-// Question Options
 let option1 = document.querySelector("#option1");
 let option2 = document.querySelector("#option2");
 let option3 = document.querySelector("#option3");
 let option4 = document.querySelector("#option4");
 let optionList = document.querySelector("#optionList");
-
-// Buttons
 let total_correct = document.querySelector("#total_correct");
 let next_question = document.querySelector("#next_question");
-
-// Result Section
 let result = document.querySelector("#result");
 let points = document.querySelector("#points");
 let quit = document.querySelector("quit");
 let startAgain = document.querySelector("#startAgain");
-
-// Get all H4 from quiz section
 let choice_que = document.querySelector(".choice_que");
-
 let index = 0;
-// let timer = 0;
 let interval = 0;
-
-// Total Points
 let correct = 0;
-
-//Store Answer
 let UserAns = undefined;
-
-// let input = document.querySelector("#myInput").value;
-// console.log("input--->", input)
-// let output = document.querySelector("#ouput");
-// input.addEventListener("input", function () {
-//     output.textContent = input.value
-// })
 let tableName = document.querySelector(".tableName");
 let tableScore = document.querySelector(".tableScore")
 let tableRank = document.querySelector(".tableRank")
 const form = document.getElementById("myForm");
+const timer = document.querySelector("#time");
+let leaderboard = document.querySelector("#leaderboard");
+let scores = document.querySelector("#scores");
+let logInitials = document.querySelector("#logInitials")
+let btnContainer = document.querySelector("button-container");
+let scoreContainer = document.querySelector(".score")
+let allQuestions = document.querySelector("#question");
+let quiz = document.querySelector("#quiz");
+let time = document.querySelector("#time");
+let answersSection = document.querySelector("#answersSection");
+let submitBtn = document.querySelector("#submit-btn");
+let currentQuestion = 0;
+let score = 0;
+let myForm = document.querySelector("#myForm");
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -115,13 +107,6 @@ form.addEventListener("submit", function (event) {
 
 
 });
-// Timer
-const timer = document.querySelector("#time");
-
-// Leaderboard
-let leaderboard = document.querySelector("#leaderboard");
-let scores = document.querySelector("#scores");
-let logInitials = document.querySelector("#logInitials")
 
 
 for (let i = 0; i < questions.length; i++) {
@@ -129,9 +114,6 @@ for (let i = 0; i < questions.length; i++) {
 }
 
 
-let btnContainer = document.querySelector("button-container");
-
-let scoreContainer = document.querySelector(".score")
 
 start.addEventListener("click", () => {
     start.style.display = "none";
@@ -170,15 +152,6 @@ function startTimer() {
     }, 1000);
 }
 
-let allQuestions = document.querySelector("#question");
-let quiz = document.querySelector("#quiz");
-let time = document.querySelector("#time");
-let answersSection = document.querySelector("#answersSection");
-let submitBtn = document.querySelector("#submit-btn");
-
-
-let currentQuestion = 0;
-let score = 0;
 
 function loadQuestions() {
     const question = questions[currentQuestion]
@@ -210,7 +183,6 @@ function checkAnswer() {
 
 }
 
-let myForm = document.querySelector("#myForm");
 
 function showResult() {
     quiz.innerHTML = `<h2> User Score: ${score} out of 100 </h2>`
