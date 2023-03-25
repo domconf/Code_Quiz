@@ -18,6 +18,8 @@ N/A
 
 ## Usage
 
+https://domconf.github.io/Code_Quiz/
+
 Below are several snapshots of the quizes usage.
 
 <img width="1470" alt="Screenshot 2023-03-25 at 2 53 01 PM" src="https://user-images.githubusercontent.com/123976458/227736642-d7b563e9-08e9-4a10-b14e-d0fb1f7ee6e7.png">
