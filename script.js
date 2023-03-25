@@ -123,9 +123,14 @@ for (let i = 0; i < questions.length; i++) {
 
 // }
 
+let btnContainer = document.querySelector("button-container");
+
+let scoreContainer = document.querySelector(".score")
+
 start.addEventListener("click", () => {
     start.style.display = "none";
     info.style.display = "block";
+
 });
 
 exit.addEventListener("click", () => {
@@ -136,19 +141,19 @@ exit.addEventListener("click", () => {
 continueBtn.addEventListener("click", () => {
     startTimer()
     info.style.display = "none";
+    quiz.style.display = "block";
 });
 
 let timeLeft = 60;
 function startTimer() {
 
     const countdown = setInterval(function () {
-        // console.log(timeLeft);
-        // timeLeft--;
+
 
         if (timeLeft <= 0) {
             clearInterval(countdown);
             timer.innerHTML = "0";
-            alert("Time is up!");
+            // alert("Time is up!");
 
             showResult()
 
@@ -202,8 +207,9 @@ function checkAnswer() {
 }
 
 function showResult() {
-    quiz.innerHTML = `<h2> User Score: ${score} out of 100 </h2>
-    `
+    quiz.innerHTML = `<h2> User Score: ${score} out of 100 </h2>`
+    resetBtn.style.display = "block";
+    leaderboard.style.display = "block";
 }
 
 loadQuestions()
