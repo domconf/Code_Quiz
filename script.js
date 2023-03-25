@@ -51,10 +51,7 @@ const questions = [
     }
 ];
 
-// Start Section
 let start = document.querySelector("#start");
-
-// Info Section
 let info = document.querySelector("#info");
 let exit = document.querySelector("#exit");
 let continueBtn = document.querySelector("#continue");
@@ -219,10 +216,14 @@ function checkAnswer() {
 
 }
 
+let myForm = document.querySelector("#myForm");
+
 function showResult() {
     quiz.innerHTML = `<h2> User Score: ${score} out of 100 </h2>`
     resetBtn.style.display = "block";
     leaderboard.style.display = "block";
+    myForm.style.display = "block";
+
 }
 
 loadQuestions()
